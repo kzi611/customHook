@@ -1,0 +1,99 @@
+.input {
+  width: 500px;
+  background-color: #656e7f;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(8px + 2vmin);
+  color: white;
+  padding: 20px;
+  height: fit-content;
+  border-radius: 10px;
+}
+
+.input .name, .age, .noted{
+  justify-content: space-between;
+  display: flex;
+  padding: 10px;
+}
+
+.input .name textarea, .age textarea, .noted textarea{
+  width: 200px;
+  border-radius: 10px;
+}
+
+.input .noted textarea{
+  height: 200px;
+}
+
+.input button{
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+  margin: 10px;
+}
+
+.header{
+  display: flex;
+  margin: 10px 50px;
+}
+
+.listNote .note{
+  display:flex;
+  flex-wrap:wrap;
+}
+
+.listNote{
+  padding:30px;
+}
+
+.statistic {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+  padding: 20px;
+  margin: 0px 100px;
+  font-size: calc(8px + 2vmin);
+  width: 100%;
+  border-radius: 10px;
+}
+
+.formStatistic {
+  margin-top: 10px;
+  border: 2px solid #282c34;
+  padding: 20px;
+  width:auto;
+  border-radius: 10px;
+}
+
+.formStatistic div {
+  margin-bottom: 5px;
+}
+
+.formStatistic label {
+  width: 250px;
+}
+
+.note-label {
+  font-weight: bold;
+  color: #333; 
+  font-size: 30px;
+}
+
+.add {
+  background-color: #4CAF50; 
+  border: none; 
+  color: white; 
+  padding: 5px 20px; 
+  text-align: center; 
+  text-decoration: none; 
+  display: inline-block; 
+  font-size: 20px; 
+  margin: 4px 2px; 
+  cursor: pointer; 
+  border-radius: 5px; 
+}
+
+.add:hover {
+  background-color: #45a049; 
+}
