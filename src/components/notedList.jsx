@@ -1,6 +1,6 @@
 import React from "react";
-import STYLE from "./style";
-import TrashIcon from "./iconDelete";
+import STYLE from "../style/style";
+import TrashIcon from "../button/iconDelete";
 
 function NotedList({ name, age, noted, onDelete }) {
   const handleDelete = () => {
