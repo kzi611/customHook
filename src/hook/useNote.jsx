@@ -1,20 +1,24 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 const useNotes = () => {
-  const [name, setName] = useState('');
-  const [age, setAge] = useState('');
-  const [noted, setNoted] = useState('');
+  const nameRef = useRef('');
+  const ageRef = useRef('');
+  const notedRef = useRef('');
   const [notes, setNotes] = useState([]);
 
   const addNote = (incrementCount, countAge16, countAge17) => {
-    const newNote = { name, age, noted };
+    const newNote = { 
+      name: nameRef.current.value, 
+      age: ageRef.current.value, 
+      noted: notedRef.current.value 
+    };
     setNotes([...notes, newNote]);
-    setName('');
-    setAge('');
-    setNoted('');
+    nameRef.current.value = ''; 
+    ageRef.current.value = '';
+    notedRef.current.value = '';
     incrementCount();
-    countAge16(parseInt(age));
-    countAge17(parseInt(age));
+    countAge16(parseInt(newNote.age));
+    countAge17(parseInt(newNote.age));
   };
 
   const deleteNote = (index) => {
@@ -22,12 +26,8 @@ const useNotes = () => {
     setNotes(updatedNotes);
   };
 
-  return {
-    name, setName,
-    age, setAge,
-    noted, setNoted,
-    notes, addNote,
-    deleteNote
+  return { 
+    nameRef, ageRef, notedRef, notes, addNote, deleteNote 
   };
 };
 

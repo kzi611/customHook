@@ -1,21 +1,28 @@
 import React from 'react';
 
-const Input = ({ name, age, noted, getName, getAge, getNoted, addNote }) => {
+const Input = ({ nameRef, ageRef, notedRef, addNote }) => {
+  const handleAddNote = () => {
+    addNote();
+    nameRef.current.value = '';
+    ageRef.current.value = '';
+    notedRef.current.value = '';
+  };
+
   return (
     <div className="input">
       <div className="name">
         <label>Name: </label>
-        <textarea name="name" value={name} onChange={getName} />
+        <textarea name="name" ref={nameRef} />
       </div>
       <div className="age">
         <label>Age:</label>
-        <textarea name="age" value={age} onChange={getAge} />
+        <textarea name="age" ref={ageRef} />
       </div>
       <div className="noted">
         <label>Noted: </label>
-        <textarea name="noted" value={noted} onChange={getNoted} />
+        <textarea name="noted" ref={notedRef} />
       </div>
-      <button className="add" onClick={addNote}>Add</button>
+      <button className="add" onClick={handleAddNote}>Add</button>
     </div>
   );
 };
